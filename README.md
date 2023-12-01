@@ -1,5 +1,5 @@
 # credit_scoring
-The credit scoring application is a sophisticated tool designed to analyze an individual's creditworthiness based on various financial and personal factors.
+The credit scoring algorithm is a sophisticated tool designed to analyze an individual's creditworthiness based on various financial and personal factors.
 
 Построен алгоритм, определяющий вероятность дефолта того или иного заказа на исторических данных из магазинов различных районов с 2015-02-24 по 2016-09-30.
 
@@ -9,8 +9,33 @@ The credit scoring application is a sophisticated tool designed to analyze an in
 **Описание данных**
 Ниже в табличном формате даны наименования фичей и таргетной колонки и их описания.
 В данных содержится конфиденциальная информация, поэтому некоторые признаки достаточно абстрактны и их точный смысл неизвестен.
-| Наименование колонки | Описание колонки     |
-|:-------------------- |:---------------------|
-| Deal_id              | Номер заказа         |
-| Deal_date            | Дата заказа          |
-| First_deal_date      | Дата первого заказа  |
+| Наименование колонки   | Описание колонки                    |
+|:-----------------------|:------------------------------------|
+| Deal_id                | Номер заказа                        |
+| Deal_date              | Дата заказа                         |
+| First_deal_date        | Дата первого заказа                 |
+| Secret_user_info_1     | Засекреченный признак по клиенту №1 |
+| Secret_user_info_2     | Засекреченный признак по клиенту №2 |
+| Secret_user_info_3     | Засекреченный признак по клиенту №3 |
+| First_default_date     | Первая дата дефолта клиента         |
+| Successful_deals_count | Дата первого заказа                 |
+| Region                 | Регион магазина                     |
+| Shop                   | Тип магазина                        |
+| Hashed_deal_detail_1   | Засекреченный признак по заказу №1  |
+| Hashed_deal_detail_2   | Засекреченный признак по заказу №2  |
+| Hashed_deal_detail_3   | Засекреченный признак по заказу №3  |
+| Hashed_deal_detail_4   | Засекреченный признак по заказу №4  |
+| Hashed_deal_detail_5   | Засекреченный признак по заказу №5  |
+| Hashed_deal_detail_6   | Засекреченный признак по заказу №6  |
+| Age                    | Возраст клиента, сделавшего заказ   |
+| Gender                 | Пол клиента, сделавшего заказ       |
+| Default                | Дефолтнул ли по этой покупке клиент?|
+|                        | 1 - да, 0 - нет.                    |
+
+Результат работы алгоритма - файл prediction формата csv, содержащий две колонки - Deal_id и Prediction, где первая колонка означает уникальный идентификатор заказа, а вторая - вероятность того, что заказавший не вернет деньги.
+Пример:
+| Deal_id   | Prediction |
+|:----------|:---------- |
+| 22487461  | 1          |
+| 62494261  | 0.93       |
+| 34822849  | 0.07       |
